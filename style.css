@@ -1,0 +1,199 @@
+:root {
+    /* primary colors */
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    /* neutral colors */
+    --neutral-blue: hsl(234, 12%, 34%);
+    --neutral-grey: hsl(229, 6%, 66%);
+    --neutral-light: hsl(0, 0%, 98%);
+}
+
+/* Body settings */
+body {
+    font-family: 'Poppins', sans-sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--neutral-blue);
+}
+
+/* responsive to desktop */
+@media (min-width: 800px) {
+    body {
+        display: grid;
+        place-items: center;
+        margin:0;
+    }
+
+    body main {
+        row-gap: 3rem;
+        max-width: 1440px;
+        place-items: center;
+    }
+
+    body .header {
+        grid-template-rows: 50px 50px 20px 1fr;
+    }
+
+    body .header h1 {
+        font-size: 2.5rem;
+    }
+
+    body .header h2 {
+        font-size: 2.5rem;
+    }
+
+    body .subtitle {
+        width: 55%;
+    }
+
+    body .card-section {
+        grid-template-rows: 1fr 1fr 2rem 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 0 2rem;
+        grid-template-areas: ". team .""supervisor team calculator""supervisor . calculator""supervisor karma calculator"". karma .";
+    }
+
+    body .supervisor {
+        grid-area: supervisor;
+    }
+
+    body .team {
+        grid-area: team;
+    }
+
+    body .karma {
+        grid-area: karma;
+    }
+
+    body .calculator {
+        grid-area: calculator;
+    }
+}
+
+/* Main settings */
+main {
+    display: grid;
+    row-gap: 6rem;
+
+    padding-top: 8vh;
+    padding-bottom: 8vh;
+}
+
+/* Header */
+.header {
+    display: grid;
+    text-align: center;
+    place-items: center;
+    grid-template-rows: 40px 40px 20px 1fr;
+}
+
+.header h1 {
+    font-size: 1.7em;
+    font-weight: 200;
+    margin: 0;
+    grid-row: 1;
+}
+
+.header h2 {
+    font-size: 1.7em;
+    font-weight: 600;
+    margin: 0;
+    grid-row: 2;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    font-weight: 200;
+    color: var(--neutral-grey);
+    grid-row: 4;
+    width: 20rem;
+}
+
+/* Cards section */
+.card-section {
+    display: grid;
+    grid-row-gap: 2rem;
+    place-items: center;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2rem 1fr 2fr;
+
+    height: 176px;
+    width: 300px;
+    border-radius: 4px;
+    box-shadow: 0px 8px 16px 4px rgba(32, 61, 91, 0.2);
+    padding: 24px;
+
+    line-height: 1.5rem;
+}
+
+.card:hover {
+    box-shadow: 0px 8px 16px 4px rgba(32, 61, 91, 0.4);
+    transform: scale(1.02);
+    transition: all 0.3s;
+}
+
+/* different border-top colors */
+.supervisor {
+    border-top: 3px solid var(--cyan);
+}
+
+.team {
+    border-top: 3px solid var(--red);
+}
+
+.karma {
+    border-top: 3px solid var(--orange);
+}
+
+.calculator {
+    border-top: 3px solid var(--blue);
+}
+
+/* Card settings */
+.card h3 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.card p {
+    grid-row: 2;
+    grid-column: span 2;
+    margin: 0;
+    color: var(--neutral-grey);
+    font-weight: 200;
+}
+
+.icon {
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: end;
+    align-self: end;
+}
+
+/* Footer section */
+footer {
+    color: black;
+    text-align: center;
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    bottom: 0;
+    background-color: #f2f2f2;
+}
+
+.attribution {
+    padding: 1rem;
+    margin: auto;
+    font-size: 11px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
